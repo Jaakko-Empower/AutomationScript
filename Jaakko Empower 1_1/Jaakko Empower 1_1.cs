@@ -71,15 +71,15 @@ namespace Jaakko_Empower_1_1
 		/// <param name="engine">Link with SLAutomation process.</param>
 		public void Run(IEngine engine)
 		{
-			var dms =  engine.GetDms();
-			var elements = dms.GetElements();
+			//var dms =  engine.GetDms();
+			//var elements = dms.GetElements();
 
-			foreach ( var element in elements )
-			{
-			engine.GenerateInformation("element: " + element.Name);
-			}
-			//var order = OrderFactory.CreateOrder("order 1");
-			//order.Dispatch("Jaakko V");
+			//foreach ( var element in elements )
+			//{
+			//engine.GenerateInformation("element: " + element.Name);
+			//}
+			var order = OrderFactory.CreateOrder("order 1");
+			order.Dispatch("Jaakko V");
 
 		}
 	}
