@@ -81,6 +81,8 @@ namespace Jaakko_Empower_1_1
 			//}
 			var order = OrderFactory.CreateOrder("order 1");
 			order.Dispatch("Jaakko V");
+
+			//foo
 		}
 	}
 }
