@@ -56,6 +56,7 @@ namespace Jaakko_Empower_1_1
 	using System.Globalization;
 	using System.Text;
 	using Skyline.DataMiner.Automation;
+	using Skyline.DataMiner.Core.DataMinerSystem.Automation;
 	
 	/// <summary>
 	/// Represents a DataMiner Automation script.
@@ -68,7 +69,16 @@ namespace Jaakko_Empower_1_1
 		/// <param name="engine">Link with SLAutomation process.</param>
 		public void Run(IEngine engine)
 		{
-			engine.GenerateInformation("Hello world");
+			var dms =  engine.GetDms();
+			var elements = dms.GetElements();
+
+			foreach ( var element in elements )
+			{
+				// foo
+				engine.GenerateInformation("element: " + element.Name);
+			}
+
+			engine.GenerateInformation("Hello");
 		}
 	}
 }
