@@ -55,8 +55,10 @@ namespace Jaakko_Empower_1_1
 	using System.Collections.Generic;
 	using System.Globalization;
 	using System.Text;
+	using Empower.Library.Room4;
 	using Skyline.DataMiner.Automation;
 	using Skyline.DataMiner.Core.DataMinerSystem.Automation;
+	using Skyline.DataMiner.Empower.Library.Room4;
 	
 	/// <summary>
 	/// Represents a DataMiner Automation script.
@@ -69,16 +71,16 @@ namespace Jaakko_Empower_1_1
 		/// <param name="engine">Link with SLAutomation process.</param>
 		public void Run(IEngine engine)
 		{
-			var dms =  engine.GetDms();
-			var elements = dms.GetElements();
+			//var dms =  engine.GetDms();
+			//var elements = dms.GetElements();
 
-			foreach ( var element in elements )
-			{
-				// foo
-				engine.GenerateInformation("element: " + element.Name);
-			}
-
-			engine.GenerateInformation("Hello");
+			//foreach ( var element in elements )
+			//{
+			// foo
+			//engine.GenerateInformation("element: " + element.Name);
+			//}
+			var order = OrderFactory.CreateOrder("order 1");
+			order.Dispatch("Jaakko V");
 		}
 	}
 }
